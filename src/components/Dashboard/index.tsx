@@ -7,20 +7,19 @@ import Api from "../../services/Api";
 import { useState } from "react";
 import { ISubmitForm } from "../../types";
 
-const [result, setResult] = useState<ISubmitForm>([] as ISubmitForm);
-
-function onSubmit(data:ISubmitForm){
-    Api.post("/", data) 
-    .then((response) => {
-        setResult(response.data);
-        console.log(response.data);
-    })
-    .catch((error) => {
-        console.log(error);
-    }) 
-}
-
 const Dashboard = () => {
+    const [result, setResult] = useState<ISubmitForm>([] as ISubmitForm);
+
+    function onSubmit(data:ISubmitForm){
+        Api.post("/", data) 
+        .then((response) => {
+            setResult(response.data);
+        })
+        .catch((error) => {
+            console.log(error);
+        }) 
+    }
+
     const schema = yup.object({
         amount: yup.string().required("O valor é obrigatório"),
         installments: yup.number().required("O número de parcelas é obrigatório").min(1, 'O mínimo de parcelas é 1').max(12,'O máximo de parcelas é 12'),
@@ -57,10 +56,10 @@ const Dashboard = () => {
                     </ul>
                 ) : (
                     <ul className='result-ul'>
-                        <li className='result-li'>Amanhã:{result[1]}</li>
-                        <li className='result-li'>Em 15 dias:{result[15]}</li>
-                        <li className='result-li'>Em 30 dias:{result[30]}</li>
-                        <li className='result-li'>Em 90 dias:{result[90]}</li>
+                        <li className='result-li'>Amanhã: {result[1]}</li>
+                        <li className='result-li'>Em 15 dias: {result[15]}</li>
+                        <li className='result-li'>Em 30 dias: {result[30]}</li>
+                        <li className='result-li'>Em 90 dias: {result[90]}</li>
                     </ul>
                 )}
             </div>
