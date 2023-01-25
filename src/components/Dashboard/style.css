@@ -1,0 +1,66 @@
+.dashboard-centralize {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-form {
+  gap: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.submit-button {
+  width: 280px;
+  height: 30px;
+  border-radius: 4px;
+}
+
+.yup-notification {
+  font-size: 12px;
+  font-family: "Inter", sans-serif;
+}
+
+h1 {
+  font-size: 20px;
+  color: rgb(88, 88, 88);
+  font-family: "Inter", sans-serif;
+}
+
+/* Result */
+
+.result-centralize {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 280px;
+  flex-direction: column;
+  gap: 30px;
+  background-color: rgb(224, 224, 224);
+}
+
+.result-title {
+  color: rgb(100, 149, 237);
+  font-style: italic;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: "Inter", sans-serif;
+  border-bottom: 1px solid rgb(100, 149, 237);
+}
+
+.result-ul {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  list-style: none;
+}
+
+.result-li {
+  font-style: italic;
+  font-size: 20px;
+  color: rgb(100, 149, 237);
+  font-family: "Inter", sans-serif;
+}
